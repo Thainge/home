@@ -7,8 +7,11 @@ function BookmarkItem({ item, index, deleteBookmark, setBaseIndex, swapElements,
     const [dragHovering, setDragHovering] = useState(false);
     const [draggingCurrentItem, setDraggingCurrentItem] = useState(false);
 
+    let readyURl = item.url;
+    readyURl = item.url.includes('https://') ? item.url : item.url.includes('http://') ? item.url : `https://${item.url}`;
+
     return (
-        <a href={item.url} className={`
+        <a href={readyURl} className={`
         ${styles.containerItem} 
         ${draggingCurrentItem ? styles.draggingCurrent : styles.nothing}
         ${isDragging ? styles.dragging : styles.nothing}

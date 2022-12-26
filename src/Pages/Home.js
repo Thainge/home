@@ -52,6 +52,7 @@ function Home() {
     const [backgroundImage, setBackgroundImage] = useState(defaultImage);
     const [themeIndex, setThemeIndex] = useState(defaultTheme);
     const [emailLink, setEmailLink] = useState(defaultEmail);
+    const [emailInput, setEmailInput] = useState('');
     const [loading, setLoading] = useState(false);
 
     const backgroundSet = async (e) => {
@@ -83,23 +84,25 @@ function Home() {
 
     const [editing, setEditing] = useState(false);
 
-    const changeEmail = (e) => {
-        let newVal = e.target.value;
+    const changeEmail = () => {
+        let readyURL = emailInput.includes('https://') ? emailInput : emailInput.includes('http://') ? emailInput : `https://${emailInput}`;
+        setEmailInput('');
         setEditing(false);
-        setEmailLink(newVal);
+        setEmailLink(readyURL);
         // Update local storage
-        localStorage.set('email', newVal);
+        localStorage.set('email', readyURL);
     }
 
     const closeEdit = () => {
         if (editing) {
+            setEmailInput('');
             setEditing(false);
         }
     }
 
     const onKeyDownHandler = (e) => {
         if (e.key === 'Enter') {
-            changeEmail(e);
+            changeEmail();
         }
     };
 
@@ -144,7 +147,7 @@ function Home() {
                 {
                     editing
                         ? <>
-                            <input className={styles.editEmail} autoFocus={true} onKeyDown={onKeyDownHandler} type='text' placeholder='Enter a URL' onSubmit={changeEmail} />
+                            <input className={styles.editEmail} value={emailInput} onChange={(e) => setEmailInput(e.target.value)} autoFocus={true} onKeyDown={onKeyDownHandler} type='text' placeholder='Enter a URL' />
                             <div className={styles.check} onClick={changeEmail}>✔</div>
                         </>
                         : <>

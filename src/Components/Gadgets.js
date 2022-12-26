@@ -149,7 +149,7 @@ function Gadgets() {
             <div className={styles.scroll} ref={$container}>
                 {
                     gadgetsDom.map((item, index) => (
-                        <a className={styles.container} key={index}>
+                        <a className={styles.container} href={item.link} key={index}>
                             <img src={item.image} className={styles.logo} />
                             <div className={styles.title}>{item.title}</div>
                         </a>
