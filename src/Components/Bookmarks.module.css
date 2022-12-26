@@ -1,0 +1,279 @@
+.addNew {
+    width: 5.73em;
+    height: 6.43em;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    transition: 0.3s background-color;
+    background-color: var(--hoverBack);
+    z-index: 11;
+}
+
+.addNew:hover {
+    background-color: var(--bookmarkHover);
+}
+
+.addCircle {
+    margin-top: .5em;
+    width: 4em;
+    height: 4em;
+    border-radius: 4em;
+    background-color: var(--addBackground);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11;
+}
+
+.addText {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: var(--addColor)
+}
+
+/* Add modal */
+
+.addModal {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 20em;
+    height: 18em;
+    padding-bottom: .6em;
+    border-radius: .5em;
+    box-shadow: 0 0 .2em .05em var(--borderBox);
+    background-color: var(--color);
+    z-index: 111999;
+}
+
+.form {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 100%;
+    width: 85%;
+    margin-top: .2em;
+    margin-left: 1em;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    color: var(--formText);
+    position: relative;
+    z-index: 111999;
+}
+
+.formHeader {
+    font-size: 1.3em;
+    font-weight: bold;
+}
+
+.nameLabel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.urlLabel {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.nameInput,
+.urlInput {
+    width: 100%;
+    height: 2em;
+    outline: none;
+    background-color: var(--formInput);
+    border: .2em solid var(--formInputHover);
+    padding-left: 1em;
+    margin-top: .5em;
+    color: var(--formText);
+}
+
+.nameInput:focus,
+.urlInput:focus {
+    background-color: var(--formInputHover);
+}
+
+.buttons {
+    display: flex;
+    width: 107%;
+    justify-content: space-between;
+}
+
+.addButton,
+.cancelButton {
+    background-color: var(--formInput);
+    color: var(--formText);
+    outline: none;
+    border: none;
+    padding: 1em;
+    width: 45%;
+    cursor: pointer;
+}
+
+.addButton:hover,
+.cancelButton:hover {
+    background-color: var(--formInputHover);
+}
+
+/* DraggablformInputHovere */
+.text {
+    margin-top: .3em;
+    width: 4em;
+    color: var(--text2);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    z-index: 11110;
+}
+
+.icon {
+    width: 2em;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.bookmark {
+    width: 4em;
+    height: 4em;
+    background-color: var(--bookmark);
+    border-radius: 5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 11110;
+}
+
+.container {
+    width: 27em;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    border-radius: 1em;
+    row-gap: 1em;
+    column-gap: 1.5em;
+    outline: none
+}
+
+.containerItem {
+    flex-basis: 17%;
+    height: 5.7em;
+    vertical-align: middle;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--hoverBack);
+    border-radius: .3em;
+    transition: 0.3s background-color;
+    padding: .5em;
+    position: relative;
+    z-index: 11;
+    text-decoration: none;
+}
+
+.containerItem:hover {
+    background-color: var(--bookmarkHover);
+    --displayDelete: block;
+}
+
+.delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 5em;
+    padding: .1em;
+    transition: all .3s;
+    opacity: var(--displayDelete);
+}
+
+.delete:hover {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.transparentDelete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 0;
+}
+
+.deleteText {
+    color: var(--text);
+    font-size: .6em;
+    padding: .3em;
+    padding-left: .4em;
+    padding-right: .4em;
+    transition: font-size .2s;
+}
+
+/* Extra dragging styles */
+.draggingCurrent {
+    cursor: move;
+    background-color: var(--beingDragged) !important;
+}
+
+.dragging {
+    cursor: move;
+    background-color: var(--allBookmarkDrag);
+}
+
+.beingDraggedOver {
+    cursor: move;
+    background-color: var(--singleBookmarkOver);
+}
+
+@media screen and (max-width: 484px) {
+    .icon {
+        width: 6vw;
+    }
+
+    .bookmark {
+        width: 10vw;
+        height: 10vw;
+        border-radius: 50vw;
+    }
+
+    .container {
+        width: 100%;
+        border-radius: 1vw;
+        row-gap: 1vw;
+        column-gap: 1.5vw;
+        display: flex;
+        justify-content: center;
+    }
+
+    .containerItem {
+        flex-basis: 17%;
+        height: 17vw;
+        border-radius: 50vw;
+        padding: 2vw;
+    }
+
+    .addCircle {
+        margin-top: 1vw;
+        width: 10vw;
+        height: 10vw;
+        border-radius: 50vw;
+    }
+
+    .addNew {
+        width: 16vw;
+        height: 16vw;
+        border-radius: 50vw;
+        padding: 2vw;
+    }
+
+    .delete {
+        display: none;
+    }
+}

@@ -1,13 +1,112 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    background-color: #1C1C1C;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+    user-select: none;
+}
+
+:root {
+    /* Text */
+    --text2: whitesmoke;
+    --text: whitesmoke;
+    --text-hover: rgb(218, 218, 218);
+    --text-active: rgb(202, 202, 202);
+
+    /* General */
+    --color: rgb(34, 34, 34);
+    --color-hover: rgb(49, 49, 49);
+
+    /* Form */
+    --formInput: rgb(46, 46, 46);
+    --formInputHover: rgb(36, 36, 36);
+    --formText: whitesmoke;
+    --backgroundHover: rgb(43, 43, 43);
+
+    /* Bookmarks */
+    --addBackground: rgba(29, 29, 29, 0.8);
+    --addColor: rgb(145, 145, 145);
+    --bookmark: rgba(54, 54, 54, 0.8);
+    --bookmarkHover: rgba(185, 185, 185, 0.3);
+    --allBookmarkDrag: rgba(255, 255, 255, 0.3);
+    --singleBookmarkOver: rgba(255, 255, 255, 0.8);
+    --beingDragged: rgba(255, 255, 255, 0.8);
+    --displayDelete: 0;
+    --hoverBack: rgba(0, 0, 0, 0);
+
+    /* Gadgets */
+    --gadgetHover: rgba(121, 121, 121, 0.3);
+    --scrollbarColor: rgba(85, 85, 85, 0.548);
+    --borderBox: rgba(85, 85, 85, 0.548);
+}
+
+html[data-theme='theme1'] {
+    /* Text */
+    --text2: whitesmoke;
+    --text: whitesmoke;
+    --text-hover: rgb(218, 218, 218);
+    --text-active: rgb(202, 202, 202);
+
+    /* General */
+    --color: rgb(8, 8, 8);
+    --color-hover: rgb(44, 44, 44);
+
+    /* Form */
+    --formInput: rgb(36, 36, 36);
+    --formInputHover: rgb(27, 27, 27);
+    --formText: whitesmoke;
+    --backgroundHover: rgb(29, 29, 29);
+
+    /* Bookmarks */
+    --addBackground: rgba(0, 0, 0, 0.8);
+    --addColor: rgb(145, 145, 145);
+    --bookmark: rgba(0, 0, 0, 0.8);
+    --bookmarkHover: rgba(0, 0, 0, 0.5);
+    --allBookmarkDrag: rgba(0, 0, 0, 0.5);
+    --singleBookmarkOver: rgba(255, 255, 255, 0.8);
+    --beingDragged: rgba(255, 255, 255, 0.8);
+    --displayDelete: 0;
+    --hoverBack: rgba(0, 0, 0, 0);
+
+    /* Gadgets */
+    --gadgetHover: rgba(107, 107, 107, 0.3);
+    --scrollbarColor: rgba(61, 61, 61, 0.548);
+    --borderBox: rgba(65, 65, 65, 0.548);
+}
+
+html[data-theme='theme2'] {
+    /* Text */
+    --text2: whitesmoke;
+    --text: whitesmoke;
+    --text-hover: rgb(218, 218, 218);
+    --text-active: rgb(202, 202, 202);
+
+    /* General */
+    --color: rgb(233, 233, 233);
+    --color-hover: rgb(36, 36, 36);
+
+    /* Form */
+    --formInput: rgb(201, 201, 201);
+    --formInputHover: rgb(182, 182, 182);
+    --formText: black;
+
+    /* Bookmarks */
+    --addBackground: rgb(221, 221, 221);
+    --addColor: rgba(0, 0, 0, 0.8);
+    --bookmark: rgb(221, 221, 221);
+    --bookmarkHover: rgba(255, 255, 255, 0.4);
+    --allBookmarkDrag: rgba(255, 255, 255, 0.5);
+    --singleBookmarkOver: rgba(255, 255, 255, 0.9);
+    --beingDragged: rgba(255, 255, 255, 0.8);
+    --displayDelete: 0;
+    --hoverBack: rgba(0, 0, 0, 0);
+
+    /* Gadgets */
+    --gadgetHover: rgba(107, 107, 107, 0.3);
+    --scrollbarColor: rgba(150, 150, 150, 0.548);
+    --borderBox: rgba(26, 26, 26, 0.548);
+    --backgroundHover: rgb(150, 150, 150);
 }

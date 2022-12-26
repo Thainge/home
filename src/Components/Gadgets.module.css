@@ -1,0 +1,108 @@
+.gadgetsBox {
+    position: absolute;
+    top: 3.5em;
+    right: .6em;
+    width: 20.7em;
+    height: 26em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    padding-left: 1em;
+    border-radius: .5em;
+    box-shadow: 0 0 .2em .05em var(--borderBox);
+    background-color: var(--color);
+    z-index: 15;
+}
+
+.scroll {
+    overflow-y: scroll;
+    width: 20em;
+    height: 26em;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 1em;
+    row-gap: 1em;
+}
+
+.scroll::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.scroll::-webkit-scrollbar {
+    width: 12px;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.scroll::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--scrollbarColor);
+}
+
+.scroll:global(.draggable-container--is-dragging) {
+    cursor: move !important;
+}
+
+.scroll:global(.draggable-container--is-dragging) * {
+    cursor: move !important;
+    --backgroundHover: rgb(97, 97, 97);
+    --hoverBack: rgba(37, 37, 37, 0.5);
+}
+
+.container {
+    border-radius: .5em;
+    width: 4.5em;
+    height: 4.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color .2s;
+    padding: .5em;
+}
+
+.container:global(.draggable-mirror) {
+    opacity: 0.6;
+}
+
+.container:hover {
+    background-color: var(--gadgetHover);
+}
+
+.logo {
+    width: 3em;
+}
+
+.title {
+    font-size: .9em;
+    color: var(--formText)
+}
+
+@media screen and (max-width: 484px) {
+    .gadgetsBox {
+        position: absolute;
+        top: 11vw;
+        right: 1vw;
+        width: 60vw;
+        height: 20em;
+        padding-top: 4vw;
+        padding-bottom: 4vw;
+        padding-left: 4vw;
+        border-radius: 2vw;
+        box-shadow: 0 0 1vw .25vw var(--borderBox);
+    }
+
+    .scroll {
+        width: 58vw;
+        height: 20em;
+        column-gap: 4vw;
+        row-gap: 4vw;
+    }
+
+    .container {
+        border-radius: 1vw;
+        width: 13vw;
+        height: 13vw;
+        padding: 1vw;
+    }
+}
