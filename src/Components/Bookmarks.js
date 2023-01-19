@@ -115,6 +115,7 @@ function Bookmarks({ addModal, setAddModal }) {
                                 <div className={styles.addCircle}>
                                     <div className={styles.addText}>+</div>
                                 </div>
+                                <div className={styles.addLabel}>Add Bookmark</div>
                             </div>
                             {
                                 addModal ? <div className={styles.addModal}>

@@ -7,11 +7,23 @@ function BookmarkItem({ item, index, deleteBookmark, setBaseIndex, swapElements,
     const [dragHovering, setDragHovering] = useState(false);
     const [draggingCurrentItem, setDraggingCurrentItem] = useState(false);
 
-    let readyURl = item.url;
-    readyURl = item.url.includes('https://') ? item.url : item.url.includes('http://') ? item.url : `https://${item.url}`;
+    let readyURL = item.url;
+    readyURL = item.url.includes('https://') ? item.url : item.url.includes('http://') ? item.url : `https://${item.url}`;
+
+    let readyImage = item.image;
+    if (item.image.includes('github.io')) {
+        let url = item.url;
+        let arr = url.split('/');
+        let str1 = 'https://' + arr[2] + '/' + arr[3] + '/' + 'logo512.png';
+        if (arr.length < 5) {
+            str1 = 'https:/' + arr[1] + '/' + arr[2] + '/' + 'logo512.png';
+            console.log(str1)
+        }
+        readyImage = str1;
+    }
 
     return (
-        <a href={readyURl} className={`
+        <a href={readyURL} className={`
         ${styles.containerItem} 
         ${draggingCurrentItem ? styles.draggingCurrent : styles.nothing}
         ${isDragging ? styles.dragging : styles.nothing}
@@ -60,7 +72,7 @@ function BookmarkItem({ item, index, deleteBookmark, setBaseIndex, swapElements,
                 </div>
             }
             <div className={styles.bookmark}>
-                <img src={item.image} className={styles.icon} />
+                <img src={readyImage} className={styles.icon} />
             </div>
             <div className={styles.text}>{item.title}</div>
         </a>

@@ -1,9 +1,10 @@
 .addNew {
-    width: 5.73em;
-    height: 6.43em;
+    width: 5.6em;
+    height: 6.5em;
     cursor: pointer;
     display: flex;
     align-items: center;
+    justify-content: center;
     flex-direction: column;
     transition: 0.3s background-color;
     background-color: var(--hoverBack);
@@ -15,10 +16,9 @@
 }
 
 .addCircle {
-    margin-top: .5em;
     width: 4em;
     height: 4em;
-    border-radius: 4em;
+    border-radius: 6em;
     background-color: var(--addBackground);
     display: flex;
     justify-content: center;
@@ -27,9 +27,20 @@
 }
 
 .addText {
-    font-size: 2.5em;
+    font-size: 2.3em;
     font-weight: 600;
     color: var(--addColor)
+}
+
+.addLabel {
+    margin-top: .3em;
+    font-size: .8em;
+    width: 7em;
+    color: var(--text2);
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 /* Add modal */
@@ -123,7 +134,8 @@
 /* DraggablformInputHovere */
 .text {
     margin-top: .3em;
-    width: 4em;
+    font-size: .8em;
+    width: 7em;
     color: var(--text2);
     text-align: center;
     white-space: nowrap;
@@ -166,6 +178,7 @@
 .containerItem {
     flex-basis: 17%;
     height: 5.7em;
+    width: 4.62em;
     vertical-align: middle;
     cursor: pointer;
     display: flex;
